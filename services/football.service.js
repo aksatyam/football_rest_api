@@ -1,7 +1,8 @@
 const fetch = require('node-fetch');
 const Bluebird = require('bluebird');
+const { key } = require('../config');
 fetch.Promise = Bluebird;
-let URL = `https://apiv2.apifootball.com?APIkey=9bb66184e0c8145384fd2cc0f7b914ada57b4e8fd2e4d6d586adcc27c257a978&`
+let URL = `https://apiv2.apifootball.com?APIkey=${key}&`
 const getFootballData = async (req, res) => {
     const { query } = req;
     if (Object.keys(query).length) {
